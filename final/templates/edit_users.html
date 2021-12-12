@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY BORROWING PORTAL</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename = '/css/style.css')}}">
+   
+</head>
+<body style="background:url(/static/image/c.jpg);background-size: cover;">
+    <button class="sgn"><a href="/home">
+        signout
+    </a></button>
+    <nav>
+        <a href="http://"> Borrower database</a>
+        <a href="">Add Borrower</a>
+    </nav>
+<br><br>
+<h1>Welcome To Library Portal</h1>
+
+<div class="container">
+<h1>Edit user</h1>
+
+<form action="/edit/{{users.ID}}" method="POST">
+
+    <input type="text" name="student_name" value="{{users.name}}" placeholder="Name">
+    <br><br>
+    <input type="text" name="student_id" value="{{users.student_id}}" placeholder="Student  ID">
+    <br><br>
+    <input type="text" name="book_name" value="{{users.book_name}}" placeholder="Book Title">
+    <br><br>
+    <input type="text" name="author" value="{{users.author}}" placeholder="Author">
+    <br><br>
+    <input type="datetime-local" name="date1" value="{{users.date1}}" placeholder="Borrowed Date">
+    <br><br>
+    <input type="submit" value="submit">
+
+</form>    
+</div>
+</body>
+</html>
